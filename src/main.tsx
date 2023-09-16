@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 					<h1 className="text-neutral-300 mb-4 text-2xl font-bold">
 						Gestor de Gastos
 					</h1>
-          <h2 className="text-neutral-300 font-light">
+          <h2 className="text-neutral-400 font-light">
             Gestionar nuestros gastos de manera conciente nos asegura un futuro prospero.
 					</h2>
 				</header>
