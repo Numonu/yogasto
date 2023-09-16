@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/defaults.css";
-import "./styles/gramatic.css"
+import CostsGroup from "./components/organisms/CostsGroup";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             Gestionar nuestros gastos de manera conciente nos asegura un futuro prospero.
 					</h2>
 				</header>
+        <CostsGroup/>
 			</div>
 		</div>
 	</React.StrictMode>
