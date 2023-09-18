@@ -1,12 +1,16 @@
 import Item from "../molecules/Item";
 import { MdOutlineDoubleArrow } from "react-icons/md";
+import Legend from "../molecules/Legend";
 
 export default function ItemAtlas() {
 	return (
 		<div>
-			<h2 className="text-neutral-300 mb-4 text-lg font-semibold">
-				Gastos
-			</h2>
+			<header className="flex justify-between items-center">
+				<h2 className="text-neutral-300 mb-4 text-lg font-semibold">
+					Gastos
+				</h2>
+				<Legend>CF</Legend>
+			</header>
 			<ul className="flex flex-col gap-3 mb-4">
 				<Item title="PS5" cost={700} />
 				<Item title="Assasins Creed Mirage" cost={50} />
@@ -19,7 +23,7 @@ export default function ItemAtlas() {
 					</span>
 					<span className="text-sm">Añadir Ganancia</span>
 				</button>
-                <button className="bg-red-500 text-white flex gap-2 p-2 rounded-md hover:bg-red-600">
+				<button className="bg-red-500 text-white flex gap-2 p-2 rounded-md hover:bg-red-600">
 					<span className="text-lg rotate-90">
 						<MdOutlineDoubleArrow />
 					</span>
