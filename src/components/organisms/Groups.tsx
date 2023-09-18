@@ -1,7 +1,6 @@
-import { AiOutlineQuestionCircle } from "react-icons/ai";
-import Dialog from "../atoms/Dialog";
 import GroupItem from "../molecules/GroupItem";
 import { FaLayerGroup } from "react-icons/fa";
+import Legend from "../molecules/Legend";
 
 export default function CostsAtlas() {
 	return (
@@ -10,20 +9,11 @@ export default function CostsAtlas() {
 				<h2 className="text-neutral-300 mb-4 text-lg font-semibold">
 					Grupos
 				</h2>
-				<Dialog
-					owner={
-						<span className="text-neutral-300 text-xl">
-							<AiOutlineQuestionCircle />
-						</span>
-					}
-				>
-					<p className="text-neutral-300 text-sm w-[180px]">
-						Categorizar y agrupar nuestros gastos nos brinda
-						claridad financiera, permitiéndonos tomar decisiones más
-						informadas y alcanzar nuestras metas económicas con
-						mayor eficacia
-					</p>
-				</Dialog>
+				<Legend>
+					Categorizar y agrupar nuestros gastos nos brinda claridad
+					financiera, permitiéndonos tomar decisiones más informadas y
+					alcanzar nuestras metas económicas con mayor eficacia
+				</Legend>
 			</header>
 			<ul className="flex flex-col gap-3 mb-4">
 				<GroupItem title="Gastos Necesarios" />
