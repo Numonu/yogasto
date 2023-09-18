@@ -9,7 +9,7 @@ export default function ItemAtlas() {
 				<h2 className="text-neutral-300 mb-4 text-lg font-semibold">
 					Gastos
 				</h2>
-				<Legend>CF</Legend>
+				<Legend>Declarar lo que genera ganancias y pérdidas nos ayuda a entender qué impulsar y qué mejorar en nuestro camino hacia el éxito financiero</Legend>
 			</header>
 			<ul className="flex flex-col gap-3 mb-4">
 				<Item title="PS5" cost={700} />
