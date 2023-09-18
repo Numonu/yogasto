@@ -15,7 +15,7 @@ export default function CostsAtlas() {
 				<CostGroup title="Ropa de mi y mi familia" />
 				<CostGroup title="Cosmeticos para la sala" />
 			</ul>
-			<button className="bg-indigo-500 text-white flex items-center gap-2 p-2 rounded-md">
+			<button className="bg-indigo-500 text-white flex items-center gap-2 p-2 rounded-md hover:bg-indigo-600">
 				<span className="text-sm">
 					<FaLayerGroup />
 				</span>

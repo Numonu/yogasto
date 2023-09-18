@@ -13,13 +13,13 @@ export default function ItemAtlas() {
 				<Item title="Dark Souls Scholars of the first Sin" cost={120} />
 			</ul>
 			<div className="flex gap-4">
-				<button className="bg-emerald-500 text-white flex gap-2 p-2 rounded-md">
+				<button className="bg-emerald-500 text-white flex gap-2 p-2 rounded-md hover:bg-emerald-600">
 					<span className="text-lg -rotate-90">
 						<MdOutlineDoubleArrow />
 					</span>
 					<span className="text-sm">Añadir Ganancia</span>
 				</button>
-                <button className="bg-red-500 text-white flex gap-2 p-2 rounded-md">
+                <button className="bg-red-500 text-white flex gap-2 p-2 rounded-md hover:bg-red-600">
 					<span className="text-lg rotate-90">
 						<MdOutlineDoubleArrow />
 					</span>
