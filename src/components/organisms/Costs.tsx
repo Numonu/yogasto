@@ -1,4 +1,4 @@
-import Item from "../molecules/Item";
+import Item from "../molecules/CostItem";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import Legend from "../molecules/Legend";
 
