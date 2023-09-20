@@ -1,8 +1,13 @@
+import {useContext} from "react";
 import GroupItem from "../molecules/GroupItem";
 import { FaLayerGroup } from "react-icons/fa";
 import Legend from "../molecules/Legend";
+import { CoreContext } from "../../context/CoreContex";
 
 export default function CostsAtlas() {
+
+	const {core} = useContext(CoreContext);
+
 	return (
 		<aside className="row-start-1 row-end-3">
 			<header className="flex justify-between items-center">
@@ -16,12 +21,7 @@ export default function CostsAtlas() {
 				</Legend>
 			</header>
 			<ul className="flex flex-col gap-3 mb-4">
-				<GroupItem title="Gastos Necesarios" />
-				<GroupItem title="Juegos y otras cosas" />
-				<GroupItem title="Comida" />
-				<GroupItem title="Skins y Pases de batalla" />
-				<GroupItem title="Ropa de mi y mi familia" />
-				<GroupItem title="Cosmeticos para la sala" />
+				{ core.storage.map(e => <GroupItem title={e.title}/>) }
 			</ul>
 			<button className="bg-indigo-500 text-white flex items-center gap-2 p-2 rounded-md hover:bg-indigo-600">
 				<span className="text-sm">
