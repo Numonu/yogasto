@@ -5,6 +5,7 @@ import Groups from "./components/organisms/Groups";
 import ItemAtlas from "./components/organisms/Costs";
 import Resume from "./components/molecules/Resume";
 import Total from "./components/molecules/Total";
+import CoreProvider from "./context/providers/CoreProvider";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
@@ -16,19 +17,24 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 							Gestor de Gastos
 						</h1>
 						<h2 className="text-neutral-400 font-light">
-							Gestionar nuestros gastos de manera conciente <br className="hidden md:block"/>
+							Gestionar nuestros gastos de manera conciente{" "}
+							<br className="hidden md:block" />
 							nos asegura un futuro prospero.
 						</h2>
 					</div>
 					<div>
-						<h2 className="text-neutral-300 mb-4 text-xl font-bold">Total</h2>
-						<Total/>
+						<h2 className="text-neutral-300 mb-4 text-xl font-bold">
+							Total
+						</h2>
+						<Total />
 					</div>
 				</header>
 				<section className="grid gap-12 md:grid-cols-[1fr_3fr] md:grid-rows-[min-content_1fr]">
-					<Groups />
-					<ItemAtlas />
-					<Resume />
+					<CoreProvider>
+						<Groups />
+						<ItemAtlas />
+						<Resume />
+					</CoreProvider>
 				</section>
 			</div>
 		</div>
