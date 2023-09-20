@@ -3,7 +3,7 @@ import { BiSolidRightArrow } from "react-icons/bi";
 
 type ItemTypes = {
 	title: string;
-	cost: number;
+	cost: string;
 };
 export default function Item({ title, cost }: ItemTypes) {
 	return (
