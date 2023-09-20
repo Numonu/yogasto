@@ -1,7 +1,7 @@
 import {useState} from "react";
 
-const useBoolean = (initialState : boolean) => {
-    const [control , setControl] = useState(initialState);
+const useBoolean = (initialState? : boolean) => {
+    const [control , setControl] = useState(initialState ?? false);
 
     const controlToggle = () => {
         const temp = control ? false : true;
