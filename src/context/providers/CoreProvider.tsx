@@ -44,6 +44,14 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 		);
 	}, []);
 
+	const handleRemoveGroup = useCallback((order: number) => {
+		setCore(
+			produce((draft) => {
+				draft.storage.splice(order, 1);
+			})
+		);
+	}, []);
+
 	return (
 		<CoreContext.Provider
 			value={{
@@ -51,6 +59,7 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 				handleAddGroup,
 				handleAddItem,
 				handleRemoveItem,
+				handleRemoveGroup,
 			}}
 		>
 			{children}

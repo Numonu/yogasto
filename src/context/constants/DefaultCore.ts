@@ -4,6 +4,7 @@ export const DEFCORE = {
 	handleAddGroup: function () {},
 	handleAddItem: function () {},
 	handleRemoveItem: function () {},
+	handleRemoveGroup: function () {},
 	core: {
 		focus: 0,
 		storage: [
