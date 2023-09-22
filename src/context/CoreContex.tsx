@@ -1,10 +1,12 @@
 import { createContext } from "react";
 import { DEFCORE } from "./constants/DefaultCore";
+import { TItem } from "../global/styles/types/TItem";
 
 type TCoreItem = {
 	order: number;
 	title: string;
 	price: string;
+	type : TItem;
 };
 type TCore = {
 	focus: number;
@@ -15,8 +17,8 @@ type TCore = {
 	}[];
 };
 type TCoreContext = {
-	handleAddGroup: (i: string) => void;
-	handleAddItem: (i: string, p: string) => void;
+	handleAddGroup: (title: string) => void;
+	handleAddItem: (title: string, price: string , type : TItem) => void;
 	core: TCore
 };
 
