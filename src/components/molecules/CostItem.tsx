@@ -39,7 +39,7 @@ export default function Item({ title, price, type , order }: ItemTypes) {
 					</span>
 					<span className={styles[type].value}>$ {price}</span>
 				</div>
-				<div className="flex justify-end" onClick={ () => handleRemoveItem(order)}>
+				<div className="flex justify-end" onClick={() => handleRemoveItem(order)}>
 					<button className="p-2 hover:text-red-500">
 						<BsTrash3Fill />
 					</button>
