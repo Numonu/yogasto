@@ -19,6 +19,7 @@ type TCore = {
 type TCoreContext = {
 	handleAddGroup: (title: string) => void;
 	handleAddItem: (title: string, price: string , type : TItem) => void;
+	handleRemoveItem : (order : number) => void;
 	core: TCore
 };
 
