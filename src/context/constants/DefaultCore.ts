@@ -10,12 +10,17 @@ export const DEFCORE = {
 		focus: 0,
 		storage: [
 			{
-				title: "example folder",
+				title: "grupo de ejemplo",
 				items: [
 					{
-						title: "example cost",
-						price: "10.00",
+						title: "gasto de ejemplo",
+						price: "5.00",
 						type: "expense" as TItem,
+					},
+					{
+						title: "ganancia de ejemplo",
+						price: "15.00",
+						type: "profit" as TItem,
 					},
 				],
 			},
