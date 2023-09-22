@@ -52,6 +52,14 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 		);
 	}, []);
 
+	const handleChangeFocus = useCallback((focus: number) => {
+		setCore(
+			produce((draft) => {
+				draft.focus = focus;
+			})
+		);
+	}, []);
+
 	return (
 		<CoreContext.Provider
 			value={{
@@ -60,6 +68,7 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 				handleAddItem,
 				handleRemoveItem,
 				handleRemoveGroup,
+				handleChangeFocus
 			}}
 		>
 			{children}
