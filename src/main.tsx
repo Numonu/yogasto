@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/defaults.css";
+import "./global/styles/defaults.css";
 import Groups from "./components/organisms/Groups";
 import ItemAtlas from "./components/organisms/Costs";
 import Resume from "./components/molecules/Resume";
