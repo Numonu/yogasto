@@ -4,10 +4,22 @@ import { TItem } from "../../global/styles/types/TItem";
 
 type ItemTypes = {
 	title: string;
-	cost: string;
-	type : TItem;
+	price: string;
+	type: TItem;
 };
-export default function Item({ title, cost }: ItemTypes) {
+export default function Item({ title, price, type }: ItemTypes) {
+	
+	const styles = {
+		expense: {
+			value: "text-red-500",
+			icon: "text-red-500 rotate-90",
+		},
+		profit: {
+			value: "text-emerald-500",
+			icon: "text-emerald-500 -rotate-90",
+		},
+	};
+
 	return (
 		<li>
 			<div className="bg-zinc-700 text-neutral-300 w-full py-2 px-4 grid grid-cols-3 gap-12 text-sm rounded-md">
@@ -17,10 +29,10 @@ export default function Item({ title, cost }: ItemTypes) {
 					</span>
 				</div>
 				<div className="flex justify-start items-center gap-2">
-					<span>
+					<span className={styles[type].icon}>
 						<BiSolidRightArrow />
 					</span>
-					<span>$ {cost}</span>
+					<span className={styles[type].value}>$ {price}</span>
 				</div>
 				<div className="flex justify-end">
 					<button className="p-2 hover:text-red-500">
