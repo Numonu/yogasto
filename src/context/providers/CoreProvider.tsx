@@ -12,7 +12,6 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 		setCore(
 			produce((draft) => {
 				draft.storage.push({
-					order: draft.storage.length,
 					title,
 					items: [],
 				});
@@ -26,7 +25,6 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 				produce((draft) => {
 					const itemAtlas = draft.storage[draft.focus].items;
 					itemAtlas.push({
-						order: itemAtlas.length,
 						title,
 						price,
 						type,
