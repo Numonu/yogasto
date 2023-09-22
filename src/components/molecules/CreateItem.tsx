@@ -1,17 +1,26 @@
-import { ChangeEvent, FC, FormEvent, useState } from "react";
+import { ChangeEvent, FC, FormEvent, useContext, useState } from "react";
 import Modal from "../atoms/Modal";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { TItem } from "../../global/styles/types/TItem";
+import { CoreContext } from "../../context/CoreContex";
 
 type CreateItemTypes = {
 	onClose: () => void;
 	type: TItem;
 };
 const CreateItem: FC<CreateItemTypes> = ({ onClose, type }) => {
+
+    const { handleAddItem } = useContext(CoreContext);
+
     const [data , setData] = useState({
         title : "",
         price : "",
     })
+    
+    const titles = {
+        profit: "Crea una nueva Ganancia",
+        expense: "Crea un nuevo Gasto",
+    };
 
     const handleChange = (e : ChangeEvent<HTMLInputElement>) => {
         setData({
@@ -20,14 +29,11 @@ const CreateItem: FC<CreateItemTypes> = ({ onClose, type }) => {
         })
     }
 
-	const titles = {
-		profit: "Crea una nueva Ganancia",
-		expense: "Crea un nuevo Gasto",
-	};
 
 	const handleSubmit = (e : FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(data);
+        handleAddItem(data.title , data.price , type);
+        onClose();
     };
 
 	return (
