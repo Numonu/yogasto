@@ -8,7 +8,7 @@ import { TItem } from "../../global/styles/types/TItem";
 export default function CoreProvider({ children }: { children: ReactNode }) {
 	const [core, setCore] = useState(DEFCORE.core);
 
-	const handleAddGroup = useCallback((title : string) => {
+	const handleAddGroup = useCallback((title: string) => {
 		setCore(
 			produce((draft) => {
 				draft.storage.push({
@@ -20,16 +20,28 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 		);
 	}, []);
 
-    const handleAddItem = useCallback((title : string , price : string , type : TItem) => {
+	const handleAddItem = useCallback(
+		(title: string, price: string, type: TItem) => {
+			setCore(
+				produce((draft) => {
+					const itemAtlas = draft.storage[draft.focus].items;
+					itemAtlas.push({
+						order: itemAtlas.length,
+						title,
+						price,
+						type,
+					});
+				})
+			);
+		},
+		[]
+	);
+
+	const handleRemoveItem = useCallback((order: number) => {
 		setCore(
 			produce((draft) => {
-                const itemAtlas = draft.storage[draft.focus].items;
-				itemAtlas.push({
-                    order : itemAtlas.length,
-                    title,
-                    price,
-					type,
-                })
+				const group = draft.storage[draft.focus];
+				group.items.splice(order, 1);
 			})
 		);
 	}, []);
@@ -40,6 +52,7 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 				core,
 				handleAddGroup,
 				handleAddItem,
+				handleRemoveItem,
 			}}
 		>
 			{children}
