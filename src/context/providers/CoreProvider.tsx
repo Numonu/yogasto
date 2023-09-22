@@ -3,6 +3,7 @@ import { CoreContext } from "../CoreContex";
 import { ReactNode } from "react";
 import { DEFCORE } from "../constants/DefaultCore";
 import { produce } from "immer";
+import { TItem } from "../../global/styles/types/TItem";
 
 export default function CoreProvider({ children }: { children: ReactNode }) {
 	const [core, setCore] = useState(DEFCORE.core);
@@ -19,7 +20,7 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 		);
 	}, []);
 
-    const handleAddItem = useCallback((title : string , price : string) => {
+    const handleAddItem = useCallback((title : string , price : string , type : TItem) => {
 		setCore(
 			produce((draft) => {
                 const itemAtlas = draft.storage[draft.focus].items;
@@ -27,6 +28,7 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
                     order : itemAtlas.length,
                     title,
                     price,
+					type,
                 })
 			})
 		);
