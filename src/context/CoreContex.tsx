@@ -19,6 +19,7 @@ type TCoreContext = {
 	handleAddItem: (title: string, price: string , type : TItem) => void;
 	handleRemoveItem : (order : number) => void;
 	handleRemoveGroup : (order : number) => void;
+	handleChangeFocus : (focus : number) => void;
 	core: TCore
 };
 
