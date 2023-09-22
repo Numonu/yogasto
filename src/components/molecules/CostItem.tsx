@@ -1,9 +1,11 @@
 import { BsTrash3Fill } from "react-icons/bs";
 import { BiSolidRightArrow } from "react-icons/bi";
+import { TItem } from "../../global/styles/types/TItem";
 
 type ItemTypes = {
 	title: string;
 	cost: string;
+	type : TItem;
 };
 export default function Item({ title, cost }: ItemTypes) {
 	return (

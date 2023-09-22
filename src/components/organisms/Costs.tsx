@@ -4,7 +4,8 @@ import { MdOutlineDoubleArrow } from "react-icons/md";
 import Legend from "../molecules/Legend";
 import { CoreContext } from "../../context/CoreContex";
 import useBoolean from "../../hooks/useBoolean";
-import CreateItem, { TItem } from "../molecules/CreateItem";
+import CreateItem from "../molecules/CreateItem";
+import { TItem } from "../../global/styles/types/TItem";
 
 export default function ItemAtlas() {
 	const { core } = useContext(CoreContext);
@@ -32,7 +33,7 @@ export default function ItemAtlas() {
 				</header>
 				<ul className="flex flex-col gap-3 mb-4">
 					{core.storage[core.focus].items.map((e) => (
-						<Item title={e.title} cost={e.price} />
+						<Item title={e.title} cost={e.price} type="expense"/>
 					))}
 				</ul>
 				<div className="flex gap-4">

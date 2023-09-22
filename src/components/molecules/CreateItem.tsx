@@ -1,8 +1,8 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import Modal from "../atoms/Modal";
 import { BsCurrencyDollar } from "react-icons/bs";
+import { TItem } from "../../global/styles/types/TItem";
 
-export type TItem = "profit" | "expense";
 type CreateItemTypes = {
 	onClose: () => void;
 	type: TItem;
