@@ -1,14 +1,18 @@
 import { BsTrash3Fill } from "react-icons/bs";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { TItem } from "../../global/styles/types/TItem";
+import { useContext } from "react";
+import { CoreContext } from "../../context/CoreContex";
 
 type ItemTypes = {
 	title: string;
 	price: string;
+	order: number;
 	type: TItem;
 };
-export default function Item({ title, price, type }: ItemTypes) {
-	
+export default function Item({ title, price, type, order }: ItemTypes) {
+	const { handleRemoveItem } = useContext(CoreContext);
+
 	const styles = {
 		expense: {
 			value: "text-red-500",
@@ -34,7 +38,10 @@ export default function Item({ title, price, type }: ItemTypes) {
 					</span>
 					<span className={styles[type].value}>$ {price}</span>
 				</div>
-				<div className="flex justify-end">
+				<div
+					className="flex justify-end"
+					onClick={() => handleRemoveItem(order)}
+				>
 					<button className="p-2 hover:text-red-500">
 						<BsTrash3Fill />
 					</button>
