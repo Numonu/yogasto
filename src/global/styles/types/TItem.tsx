@@ -1,0 +1,1 @@
+export type TItem = "profit" | "expense";
