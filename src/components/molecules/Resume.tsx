@@ -19,12 +19,12 @@ export default function Resume() {
 	};
 
 	return (
-		<div className="text-white">
-			<div className="border-neutral-300 border-b pb-1 mb-1 flex items-center gap-4">
+		<div className="text-white whitespace-nowrap">
+			<div className="border-neutral-300 border-b pb-1 mb-1 flex flex-col gap-4 md:flex-row md:items-end">
 				<div>
-					<span className="text-neutral-300">Operaciones : </span>
+					<span className="text-neutral-300 ">Operaciones : </span>
 				</div>
-				<div className="grow flex items-center justify-end gap-4">
+				<div className="grow flex flex-col flex-wrap justify-end gap-4  md:flex-row">
 					{core.storage.map((e) => {
 						return e.items.map((e , i) => {
 							return (
@@ -42,10 +42,10 @@ export default function Resume() {
 							);
 						});
 					})}
-					<span className="text-lg font-light">$ {total}</span>
 				</div>
+					<span className="text-lg font-light leading-5">$ {total}</span>
 			</div>
-			<div className="flex justify-end">
+			<div className="flex md:justify-end">
 				<span className="text-neutral-400 text-base">
 					$ {printResume()}
 				</span>
