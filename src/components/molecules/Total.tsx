@@ -15,7 +15,6 @@ export default function Total() {
 				type="number"
 				step={0.01}
 				value={total}
-                defaultValue={0}
 				onChange={e => updateTotal(Number(e.target.value))}
 			/>
 		</div>
