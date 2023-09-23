@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { CoreContext } from "../CoreContex";
 import { ReactNode } from "react";
 import { DEFCORE } from "../constants/DefaultCore";
@@ -7,6 +7,7 @@ import { TItem } from "../../global/styles/types/TItem";
 
 export default function CoreProvider({ children }: { children: ReactNode }) {
 	const [core, setCore] = useState(DEFCORE.core);
+	const [loaded , setLoaded] = useState(false);
 
 	const handleAddGroup = useCallback((title: string) => {
 		setCore(
@@ -60,6 +61,23 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 		);
 	}, []);
 
+	useEffect(() => {
+		const json = JSON.parse(localStorage["save"]);
+		setCore({
+			...core,
+			storage: json,
+		});
+		setLoaded(true);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	useEffect(() => {
+		if(!loaded)return;
+		const json = JSON.stringify(core.storage);
+		localStorage["save"] = json;
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [core.storage]);
+
 	return (
 		<CoreContext.Provider
 			value={{
@@ -68,7 +86,7 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 				handleAddItem,
 				handleRemoveItem,
 				handleRemoveGroup,
-				handleChangeFocus
+				handleChangeFocus,
 			}}
 		>
 			{children}
