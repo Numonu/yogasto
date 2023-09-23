@@ -5,7 +5,7 @@ import Legend from "../molecules/Legend";
 import { CoreContext } from "../../context/CoreContex";
 import useBoolean from "../../hooks/useBoolean";
 import CreateItem from "../molecules/CreateItem";
-import { TItem } from "../../global/styles/types/TItem";
+import { TItem } from "../../global/types/TItem";
 
 export default function ItemAtlas() {
 	const { core } = useContext(CoreContext);

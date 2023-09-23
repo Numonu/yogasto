@@ -3,7 +3,7 @@ import { CoreContext } from "../CoreContex";
 import { ReactNode } from "react";
 import { DEFCORE } from "../constants/DefaultCore";
 import { produce } from "immer";
-import { TItem } from "../../global/styles/types/TItem";
+import { TItem } from "../../global/types/TItem";
 
 export default function CoreProvider({ children }: { children: ReactNode }) {
 	const [core, setCore] = useState(DEFCORE.core);

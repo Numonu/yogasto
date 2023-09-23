@@ -1,4 +1,4 @@
-import { TItem } from "../../global/styles/types/TItem";
+import { TItem } from "../../global/types/TItem";
 
 export const DEFCORE = {
 	handleAddGroup: function () {},

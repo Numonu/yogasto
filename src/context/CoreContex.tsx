@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { DEFCORE } from "./constants/DefaultCore";
-import { TItem } from "../global/styles/types/TItem";
+import { TItem } from "../global/types/TItem";
 
 type TCoreItem = {
 	title: string;

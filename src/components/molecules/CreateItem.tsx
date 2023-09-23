@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, FormEvent, useContext, useState } from "react";
 import Modal from "../atoms/Modal";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { TItem } from "../../global/styles/types/TItem";
+import { TItem } from "../../global/types/TItem";
 import { CoreContext } from "../../context/CoreContex";
 
 type CreateItemTypes = {

@@ -1,6 +1,6 @@
 import { BsTrash3Fill } from "react-icons/bs";
 import { BiSolidRightArrow } from "react-icons/bi";
-import { TItem } from "../../global/styles/types/TItem";
+import { TItem } from "../../global/types/TItem";
 import { useContext } from "react";
 import { CoreContext } from "../../context/CoreContex";
 

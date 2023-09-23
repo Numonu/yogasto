@@ -5,5 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body{
+    --zinc : rgba(24,24,27,.95);
     font-family: Poppins , sans-serif;
+    background-image: linear-gradient(var(--zinc) , var(--zinc)) , url("images/wallpaper.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
