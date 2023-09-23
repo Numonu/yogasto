@@ -15,7 +15,7 @@ export default function Resume() {
 				else result += price;
 			});
 		});
-		return String(result).slice(0,5);
+		return result.toFixed(2);
 	};
 
 	return (
