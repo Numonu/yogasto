@@ -7,7 +7,7 @@
 body{
     --zinc : rgba(24,24,27,.95);
     font-family: Poppins , sans-serif;
-    background-image: linear-gradient(var(--zinc) , var(--zinc)) , url("images/wallpaper.jpg");
+    background-image: linear-gradient(var(--zinc) , var(--zinc)) , url("../../../public/images/wallpaper.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
