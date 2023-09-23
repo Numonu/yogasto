@@ -15,7 +15,7 @@ const Modal: FC<ModalTypes> = ({ children, onClose , title }) => {
 			onClick={onClose}
 		>
 			<div
-				className="bg-zinc-800 w-full max-w-[600px] p-4 rounded-md"
+				className="bg-zinc-800 w-full max-w-[500px] p-4 rounded-md"
 				onClick={(e) => e.stopPropagation()}
 			>
                 <div className="flex justify-between items-center mb-4">
