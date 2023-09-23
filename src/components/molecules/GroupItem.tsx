@@ -25,7 +25,7 @@ export default function CostGroup({ title, order }: CostGroupTypes) {
 			>
 				<header className="flex items-center justify-between">
 					<h3
-						className={`text-neutral-400 group-hover:text-neutral-200 ${
+						className={`text-neutral-400 max-w-[300px] whitespace-nowrap overflow-hidden text-ellipsis group-hover:text-neutral-200 ${
 							focusMe && "text-neutral-200"
 						}`}
 					>
