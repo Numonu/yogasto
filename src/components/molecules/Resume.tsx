@@ -26,9 +26,10 @@ export default function Resume() {
 				</div>
 				<div className="grow flex items-center justify-end gap-4">
 					{core.storage.map((e) => {
-						return e.items.map((e) => {
+						return e.items.map((e , i) => {
 							return (
 								<span
+									key={`${e.title}_${i}`}
 									className={`text-xs ${
 										e.type == "expense"
 											? "text-red-500"
