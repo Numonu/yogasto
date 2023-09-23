@@ -62,11 +62,15 @@ export default function CoreProvider({ children }: { children: ReactNode }) {
 	}, []);
 
 	useEffect(() => {
-		const json = JSON.parse(localStorage["save"]);
+		const storagePick = localStorage["save"];
+		if(!storagePick)return;
+
+		const json = JSON.parse(storagePick);
 		setCore({
 			...core,
 			storage: json,
 		});
+		
 		setLoaded(true);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
