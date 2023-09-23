@@ -35,7 +35,7 @@ export default function ItemAtlas() {
 				</header>
 				<ul className="flex flex-col gap-3 mb-4">
 					{core.storage[core.focus]?.items.map((e, i) => (
-						<Item {...e} order={i} />
+						<Item {...e} order={i} key={`${e.title}_${i}`}/>
 					))}
 				</ul>
 				<div className="flex gap-4">

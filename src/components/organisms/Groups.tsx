@@ -25,7 +25,7 @@ export default function CostsAtlas() {
 				</header>
 				<ul className="flex flex-col gap-3 mb-4">
 					{core.storage.map((e , i) => (
-						<GroupItem title={e.title} order={i}/>
+						<GroupItem title={e.title} order={i} key={`${e.title}_${i}`}/>
 					))}
 				</ul>
 				<button
