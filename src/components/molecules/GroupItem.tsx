@@ -17,8 +17,8 @@ export default function CostGroup({ title, order }: CostGroupTypes) {
 
 	return (
 		<li>
-			<button
-				className={`bg-zinc-700 outline-zinc-700 w-full p-4 pr-2 rounded-md outline-2 group hover:bg-zinc-800 hover:outline ${
+			<div
+				className={`bg-zinc-700 outline-zinc-700 w-full p-4 pr-2 rounded-md outline-2 group hover:bg-zinc-800 hover:outline cursor-pointer ${
 					focusMe && "bg-zinc-800 outline"
 				}`}
 				onClick={() => handleChangeFocus(order)}
@@ -41,7 +41,7 @@ export default function CostGroup({ title, order }: CostGroupTypes) {
 						<BsTrash3Fill />
 					</button>
 				</header>
-			</button>
+			</div>
 		</li>
 	);
 }
