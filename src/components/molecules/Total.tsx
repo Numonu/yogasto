@@ -16,6 +16,8 @@ export default function Total() {
 				step={0.01}
 				value={total}
 				onChange={e => updateTotal(Number(e.target.value))}
+				min={0}
+				max={100000000000}
 			/>
 		</div>
 	);

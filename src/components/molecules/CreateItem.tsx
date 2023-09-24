@@ -57,6 +57,8 @@ const CreateItem: FC<CreateItemTypes> = ({ onClose, type }) => {
                         name="price"
 						step={0.01}
                         onChange={handleChange}
+						min={0}
+						max={100000000000}
 					/>
 				</div>
 				<button className="bg-indigo-500 text-white w-max py-2 px-6 rounded-md hover:bg-indigo-600">
