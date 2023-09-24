@@ -3,6 +3,7 @@ import Modal from "../atoms/Modal";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { TItem } from "../../global/types/TItem";
 import { CoreContext } from "../../context/CoreContex";
+import MAX_PRICE from "../../global/constants/maxPrice";
 
 type CreateItemTypes = {
 	onClose: () => void;
@@ -23,12 +24,16 @@ const CreateItem: FC<CreateItemTypes> = ({ onClose, type }) => {
     };
 
     const handleChange = (e : ChangeEvent<HTMLInputElement>) => {
+
+		let newValue : number | string = Number(e.target.value);
+		if(Number.isNaN(newValue)) newValue = e.target.value;
+		else newValue = Math.min(newValue , MAX_PRICE);
+
         setData({
             ...data,
-            [e.target.name] : e.target.value
+            [e.target.name] : newValue
         })
     }
-
 
 	const handleSubmit = (e : FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -56,9 +61,10 @@ const CreateItem: FC<CreateItemTypes> = ({ onClose, type }) => {
 						type="number"
                         name="price"
 						step={0.01}
+						value={data.price}
                         onChange={handleChange}
 						min={0}
-						max={100000000000}
+						max={MAX_PRICE}
 					/>
 				</div>
 				<button className="bg-indigo-500 text-white w-max py-2 px-6 rounded-md hover:bg-indigo-600">

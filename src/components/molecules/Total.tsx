@@ -1,5 +1,6 @@
 import { BsCurrencyDollar } from "react-icons/bs";
 import useTotal from "../../hooks/useTotal";
+import MAX_PRICE from "../../global/constants/maxPrice";
 
 export default function Total() {
 
@@ -17,7 +18,7 @@ export default function Total() {
 				value={total}
 				onChange={e => updateTotal(Number(e.target.value))}
 				min={0}
-				max={100000000000}
+				max={MAX_PRICE}
 			/>
 		</div>
 	);
